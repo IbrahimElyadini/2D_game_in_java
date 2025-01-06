@@ -21,8 +21,8 @@ import java.io.InputStreamReader;
 public class TileManager {
 
     GamePanel gP;
-    Tile[] tile;
-    int mapTileNum[][];
+    public Tile[] tile;
+    public int mapTileNum[][];
 
     public TileManager(GamePanel gP) {
 
@@ -42,17 +42,20 @@ public class TileManager {
 
             tile[1] = new Tile();
             tile[1].image = ImageIO.read(getClass().getClassLoader().getResource("tiles/wall.png"));
+            tile[1].collision = true;
 
             tile[2] = new Tile();
             tile[2].image = ImageIO.read(getClass().getClassLoader().getResource("tiles/water.png"));
+            tile[2].collision = true;
 
             tile[3] = new Tile();
             tile[3].image = ImageIO.read(getClass().getClassLoader().getResource("tiles/earth.png"));
 
             tile[4] = new Tile();
             tile[4].image = ImageIO.read(getClass().getClassLoader().getResource("tiles/tree.png"));
+            tile[4].collision = true;
 
-            tile[5]  = new Tile();
+            tile[5] = new Tile();
             tile[5].image = ImageIO.read(getClass().getClassLoader().getResource("tiles/sand.png"));
 
 
@@ -108,8 +111,14 @@ public class TileManager {
             int screenX = worldX - gP.player.worldX + gP.player.screenX;
             int screenY = worldY - gP.player.worldY + gP.player.screenY;
 
+            if( worldX + gP.tileSize > gP.player.worldX - gP.player.screenX
+             && worldX - gP.tileSize < gP.player.worldX + gP.player.screenX
+             && worldY + gP.tileSize > gP.player.worldY - gP.player.screenY
+             && worldY - gP.tileSize < gP.player.worldY + gP.player.screenY ) {
 
-            g2.drawImage(tile[tileNum].image, screenX, screenY, gP.tileSize, gP.tileSize, null);
+                g2.drawImage(tile[tileNum].image, screenX, screenY, gP.tileSize, gP.tileSize, null);
+
+            }
             worldCol++;
 
             if(worldCol == gP.maxWorldCol){
