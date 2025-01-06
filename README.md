@@ -22,7 +22,7 @@ This is a simple **2D game** built as part of my journey to learn Java and game 
 ##  Credits
 
 1. Ryi snow's youtube playlist "How to make a 2D game in java" helped me a lot understanding concepts such as the gamethread, the camera, the world maps and more: https://www.youtube.com/@RyiSnow
-2. Character sprites taken from: https://opengameart.org/content/overhead-action-rpg-hero
+2. Character sprites and objects sprites taken from: https://opengameart.org/content/overhead-action-rpg-hero , https://opengameart.org/content/rpg-items-0
    made by LUNARSIGNALS
 3. background tiles from: https://opengameart.org/content/lpc-16x16-tiles-extended
    by rubberduck
