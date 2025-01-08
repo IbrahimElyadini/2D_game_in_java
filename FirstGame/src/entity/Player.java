@@ -16,7 +16,7 @@ public class Player extends Entity{
     public final int screenX;
     public final int screenY;
 
-    int hasKey = 0;
+    public int hasKey = 0;
 
     public Player(GamePanel gP, KeyHandler keyH) {
         this.gP = gP;
@@ -34,8 +34,8 @@ public class Player extends Entity{
 
     public void setDefaultValues() {
 
-        worldX = gP.tileSize * 25;
-        worldY = gP.tileSize * 25;
+        worldX = gP.tileSize * 23;
+        worldY = gP.tileSize * 21;
         speed = 4;
         direction = "down";
     }
@@ -122,22 +122,35 @@ public class Player extends Entity{
             String objectName = gP.obj[index].name;
             switch(objectName){
                 case "Key":
+                    gP.playSound(1);
                     hasKey++;
                     gP.obj[index] = null;
-                    System.out.println("Keys: " + hasKey);
+                    gP.ui.showMessage("You picked up a key!");
+
                     break;
                 case "Door":
                     if(hasKey > 0){
+                        gP.playSound(3);
                         hasKey--;
                         gP.obj[index] = null;
+                        gP.ui.showMessage("You opened a door!");
                     }
-                    System.out.println("Keys: " + hasKey);
+                    else{
+                        gP.ui.showMessage("You need a key!");
+                    }
+
                     break;
                 case "Chest":
+                    gP.ui.gameFinished = true;
+                    gP.ui.showMessage("You have found the chest!");
+                    gP.stopMusic();
+                    gP.playSound(4);
                     break;
                 case "Boot":
+                    gP.playSound(2);
                     speed += 2;
                     gP.obj[index] = null;
+                    gP.ui.showMessage("The boots make you faster!");
                     break;
             }
         }
