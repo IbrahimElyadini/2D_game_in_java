@@ -28,4 +28,15 @@ This is a simple **2D game** built as part of my journey to learn Java and game 
    by rubberduck
    background tiles from: https://opengameart.org/content/16x16-tiles
    by Ogrebane
+4. Main theme : https://opengameart.org/content/blue-sky
+by Alex McCulloch.
+
+5. rpg sound pack : https://opengameart.org/content/rpg-sound-pack
+by artisticdude
+
+6. level up sound effect : https://opengameart.org/content/power-up-level-up-beansjam
+by Quitschie
+
+7. fanfare sound effect: https://opengameart.org/content/8bit-fanfare-jingle-the-lick
+by Haley Halcyon
 
